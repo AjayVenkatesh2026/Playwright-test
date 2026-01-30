@@ -31,11 +31,10 @@ jobs:
       - name: Build Storybook
         run: npm run storybook:build
 
-      - name: Serve Storybook
-        run: npx http-server storybook-static -p 6006 &
-
-      - name: Wait for Storybook
-        run: npx wait-on http://localhost:6006
+      - name: Serve Storybook and wait
+        run: |
+          npx http-server storybook-static -p 6006 &
+          npx wait-on http://localhost:6006 --timeout 3000
 
       - name: Run Playwright visual tests
         run: npm run test:ci
