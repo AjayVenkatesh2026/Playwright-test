@@ -12,7 +12,7 @@ permissions:
 jobs:
   test:
     name: Test Pixel Perfection
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -46,4 +46,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: component-snapshots
-          path: tests/component/**/__snapshots__/**
+          path: |
+            tests/**/*-snapshots/**
+            tests/**/__snapshots__/**
+            tests/**/__screenshots__/**
