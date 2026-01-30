@@ -6,23 +6,20 @@ Quick start
 
 1. Install dependencies
 
-   npm install
+   ```npm install```
 
 2. Run dev server
 
-   npm run dev
+   ```npm run dev```
 
 3. Run Storybook
 
-   npm run storybook
+   ```npm run storybook```
 
-4. Run Playwright E2E tests (ensure dev server or storybook is running as appropriate)
+4. Run Playwright Pixel Perfection tests
 
-   npm run test:e2e
+   ```npm run test:ci```
 
-5. Run Playwright component tests
-
-   npm run test:component
 
 Notes
 
