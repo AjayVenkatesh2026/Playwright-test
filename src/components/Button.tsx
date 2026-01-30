@@ -7,7 +7,7 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 
 export const Button: React.FC<ButtonProps> = ({ children, variant = 'primary', ...props }) => {
   return (
-    <button className={`btn ${variant}`} {...props}>
+    <button data-testid='button' className={`btn ${variant}`} {...props}>
       {children}
     </button>
   );

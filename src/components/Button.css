@@ -1,4 +1,83 @@
-.btn{display:inline-flex;align-items:center;gap:0.5rem;border:0;padding:0.5rem 1rem;border-radius:6px;font-weight:600;cursor:pointer}
-.btn.primary{background:var(--accent);color:white}
-.btn.secondary{background:#e2e8f0;color:#0f172a}
-.btn:active{transform:translateY(1px)}
+/* Button base (mobile-first) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 80ms ease, box-shadow 120ms ease;
+  will-change: transform;
+}
+
+.btn.primary {
+  background: var(--accent, #2563eb);
+  color: white;
+}
+
+.btn.secondary {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.18);
+  outline-offset: 2px;
+}
+
+/* Portrait orientation (taller screens, e.g. phones held upright) */
+@media (orientation: portrait) {
+  .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  .btn.primary {
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.08);
+  }
+}
+
+/* Landscape orientation (wider than tall, e.g. phones on side, small tablets) */
+@media (orientation: landscape) {
+  .btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 13px;
+    border-radius: 6px;
+  }
+  .btn.primary {
+    box-shadow: none;
+  }
+}
+
+/* Desktop and larger screens */
+@media (min-width: 1024px) {
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 16px;
+    gap: 0.75rem;
+    border-radius: 8px;
+  }
+  .btn.primary {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    box-shadow: 0 10px 30px rgba(16, 24, 40, 0.06);
+  }
+  .btn.secondary {
+    font-size: 15px;
+  }
+}
+
+/* Optional: landscape on large screens (wide desktop) */
+@media (min-width: 1024px) and (orientation: landscape) {
+  .btn {
+    padding: 0.9rem 1.75rem;
+    font-size: 17px;
+  }
+}
