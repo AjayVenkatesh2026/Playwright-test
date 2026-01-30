@@ -1,0 +1,52 @@
+# Node
+node_modules/
+
+# Build outputs
+dist/
+build/
+.cache/
+
+# Vite
+/.vite/
+
+# Storybook
+.storybook-static/
+.storybook-build/
+
+# Playwright
+.playwright/
+playwright-report/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime env files
+.env
+.env.*.local
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-workspace
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage
+coverage/
+
+# Optional npm cache
+.npm
+
+# Lockfiles (if you use a different package manager)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml

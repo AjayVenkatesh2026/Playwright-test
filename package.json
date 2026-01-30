@@ -1,0 +1,39 @@
+{
+  "name": "vite-react-storybook-playwright",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Ajay Venkatesh Gunturu",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 5173",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build",
+    "test:e2e": "playwright test tests/e2e --project=chromium",
+    "test:component": "playwright test tests/component --config=playwright.config.ts",
+    "test": "npm run test:e2e && npm run test:component",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.0",
+    "vite": "^5.1.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "storybook": "^7.1.0",
+    "@storybook/react": "^7.1.0",
+    "@storybook/react-vite": "^7.1.0",
+    "@storybook/addon-essentials": "^7.1.0",
+    "@playwright/test": "^1.40.0",
+    "@playwright/experimental-ct-react": "^1.40.0",
+    "eslint": "^8.40.0",
+    "eslint-plugin-react": "^7.33.0",
+    "prettier": "^2.8.0"
+  }
+}
