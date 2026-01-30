@@ -35,7 +35,7 @@ jobs:
       - name: Serve Storybook and wait
         run: |
           npx http-server storybook-static -p 6006 &
-          npx wait-on http://127.0.0.1:3000 --timeout 3000
+          npx wait-on http://127.0.0.1:6006 --timeout 3000
 
       - name: Run Playwright visual tests
         run: npm run test:ci
