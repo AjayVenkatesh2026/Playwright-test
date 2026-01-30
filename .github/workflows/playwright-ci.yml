@@ -50,3 +50,17 @@ jobs:
             tests/**/*-snapshots/**
             tests/**/__snapshots__/**
             tests/**/__screenshots__/**
+
+      - name: Deploy Playwright report to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./playwright-report
+          publish_branch: gh-pages
+
+      - name: Print report URL
+        if: always()
+        run: |
+          echo "Playwright report published to GitHub Pages (may take a minute to be available)"
+          echo "https://${{ github.repository_owner }}.github.io/${{ github.repository }}"
