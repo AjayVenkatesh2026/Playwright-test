@@ -1,5 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 
+// For emulating CI in local
+// process.env.CI = 'true';
+
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
@@ -9,7 +12,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
+  reporter: process.env.CI ? [['dot'], ['html']] : 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
@@ -47,7 +50,9 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: process.env.CI ? 'npx http-server storybook-static -p 6006' : 'npm run storybook',
+    command: process.env.CI
+      ? 'npx http-server storybook-static -p 6006'
+      : 'npm run storybook',
     port: 6006,
     reuseExistingServer: !process.env.CI,
   },
