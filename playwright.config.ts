@@ -47,7 +47,7 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'npm run storybook',
+    command: process.env.CI ? 'npx http-server storybook-static -p 6006' : 'npm run storybook',
     port: 6006,
     reuseExistingServer: !process.env.CI,
   },
