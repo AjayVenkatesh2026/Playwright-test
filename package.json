@@ -9,6 +9,9 @@
     "preview": "vite preview --port 5173",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
+    "test:e2e": "playwright test tests/e2e --project=chromium",
+    "test:pixel-perfection": "playwright test tests/pixel-perfection --config=playwright.config.ts",
+    "test:ci": "playwright test",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit"

@@ -11,6 +11,7 @@ build/
 
 # Storybook
 .storybook-static/
+storybook-static/
 .storybook-build/
 
 # Playwright
